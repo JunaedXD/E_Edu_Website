@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Secret Learner : Courses</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+ <!-- Top Bar -->
+  <div class="top-bar">
+     <button class="back-button" onclick="goBack()">← Back</button>
+
+    <!-- Profile Button -->
+    <button class="profile-btn" onclick="toggleProfileBox()">
+      <div class="profile-icon">
+        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile">
+      </div>
+    </button>
+  </div>
+
+  <!-- Profile Box -->
+  <div class="profile-box" id="profileBox">
+    <button class="signout" onclick="alert('Signed out')">Sign Out</button>
+    <div class="profile-img">
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile">
+    </div>
+    <div class="info">
+      <div><strong>Name:</strong> Junaed Sheikh</div>
+      <div><strong>Class:</strong> XII (12th)</div>
+      <div><strong>Batch Code:</strong> BATCH2025</div>
+    </div>
+  </div>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <!-- <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Secret<span
+                    style="color: #54a2ff;">Learner</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav> -->
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <!-- <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">My Courses</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="mycourses.html">My Courses</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">JEE Mains + Advanced</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Header End -->
+
+
+    <!-- Categories Start -->
+    <div class="container-xxl py-5 category">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center px-3">JEE Mains + Advanced</h6>
+            </div>
+
+        </div>
+    </div>
+    <!-- Categories End -->
+
+<div class="container">
+    <!-- Main Tabs -->
+    <div class="tab-header">
+      <button class="tab-button active" data-tab="description">Description</button>
+      <button class="tab-button" data-tab="classes">All Classes</button>
+      <button class="tab-button" data-tab="tests">Tests</button>
+      <button class="tab-button" data-tab="announcements">Announcements</button>
+    </div>
+
+<!-- Description Tab -->
+<div id="description" class="tab-content active">
+  <h2 class="section-heading">📘 Course Overview</h2>
+
+  <div class="description-layout">
+    <!-- LEFT: Course Info -->
+    <div class="description-box">
+      <div class="description-item">
+        <i class="fa-solid fa-circle-info icon"></i>
+        <div class="desc-content">
+          <h4>About This Course</h4>
+          <p>This course is designed to prepare students for competitive exams like JEE and NEET. It covers Physics, Chemistry, and Maths in depth, with recorded lectures, live tests, and doubt-solving sessions.</p>
+        </div>
+      </div>
+
+      <div class="description-item">
+        <i class="fa-solid fa-hourglass-half icon"></i>
+        <div class="desc-content">
+          <h4>Duration</h4>
+          <p>April 2025 – February 2026 (11 Months)</p>
+        </div>
+      </div>
+
+      <div class="description-item">
+        <i class="fa-solid fa-calendar-days icon"></i>
+        <div class="desc-content">
+          <h4>Timetable (PDF)</h4>
+          <a href="files/timetable.pdf" target="_blank" class="desc-link">Download Timetable</a>
+        </div>
+      </div>
+
+      <div class="description-item">
+        <i class="fa-solid fa-file-lines icon"></i>
+        <div class="desc-content">
+          <h4>Syllabus (PDF)</h4>
+          <a href="files/syllabus.pdf" target="_blank" class="desc-link">Download Syllabus</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Thumbnail + Teachers -->
+    <div class="course-sidebar">
+      <div class="course-thumb">
+        <img src="img/course1.jpg" alt="Course Thumbnail">
+      </div>
+
+      <h3 class="teachers-heading">👨‍🏫 Teachers</h3>
+
+      <div class="teacher-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Teacher" class="teacher-photo">
+        <div class="teacher-info">
+          <strong>Mr. Ravi Sharma</strong><br>
+          <span>Physics Teacher</span><br>
+          <small>Experience: 12 years</small><br>
+          <small>Alumni: IIT Delhi</small>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Teacher" class="teacher-photo">
+        <div class="teacher-info">
+          <strong>Ms. Neha Verma</strong><br>
+          <span>Chemistry Teacher</span><br>
+          <small>Experience: 9 years</small><br>
+          <small>Alumni: NIT Trichy</small>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Teacher" class="teacher-photo">
+        <div class="teacher-info">
+          <strong>Mr. Sandeep Roy</strong><br>
+          <span>Maths Teacher</span><br>
+          <small>Experience: 10 years</small><br>
+          <small>Alumni: IISc Bangalore</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- All Classes Tab -->
+<div id="classes" class="tab-content">
+  <h2 class="section-heading">All Classes - Video Lectures</h2>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs">
+    <div class="filter-tab active" data-subject="all">All</div>
+    <div class="filter-tab" data-subject="physics">Physics</div>
+    <div class="filter-tab" data-subject="chemistry">Chemistry</div>
+    <div class="filter-tab" data-subject="maths">Maths</div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search video by title...">
+  </div>
+
+
+<!-- YouTube Video Player -->
+<div class="video-player-box" id="videoPlayerBox" style="display: none;">
+  <div class="video-player">
+    <iframe
+  id="videoIframe"
+  src=""
+  frameborder="0"
+  allowfullscreen
+  allow="autoplay"
+></iframe>
+
+  </div>
+  <h3 id="videoTitle">Video Title</h3>
+  <p id="videoDescription">Video description will appear here.</p>
+</div>
+
+  <!-- Video Cards -->
+  <div class="course-grid" id="videoGrid">
+
+    <div class="video-card" data-subject="chemistry" data-title="Mole Concept's" data-video="https://www.youtube.com/embed/kKKM8Y-u7ds">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/_5bW5FqJpE8/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Chemistry</span>
+        <div class="video-title">Mole Concept Basics</div>
+        <div class="video-info">Duration: 55 mins</div>
+        <button class="watch-btn">Watch Now</button>
+        <a class="notes-btn" href="assets/notes/newton-laws.pdf" target="_blank" download>📄 Download Notes</a>
+      </div>
+    </div>
+
+    <div class="video-card" data-subject="chemistry" data-title="mole concept basics">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/_5bW5FqJpE8/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Chemistry</span>
+        <div class="video-title">Mole Concept Basics</div>
+        <div class="video-info">Duration: 55 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+
+    <div class="video-card" data-subject="maths" data-title="vectors geometry">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/VyWt5qaKItI/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Vectors and Geometry</div>
+        <div class="video-info">Duration: 48 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+
+    <div class="video-card hidden" data-subject="physics" data-title="laws of motion">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/5Kk3sHzH9Gk/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Physics</span>
+        <div class="video-title">Laws of Motion</div>
+        <div class="video-info">Duration: 40 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+
+    <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+        <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+        <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+        <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+        <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+        <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+            <div class="video-card hidden" data-subject="maths" data-title="trigonometry identities">
+      <div class="video-thumb" style="background-image: url('https://img.youtube.com/vi/91RATfHmyNE/0.jpg');"></div>
+      <div class="video-content">
+        <span class="subject-tag">Maths</span>
+        <div class="video-title">Trigonometry Identities</div>
+        <div class="video-info">Duration: 38 mins</div>
+        <a href="#" class="watch-btn">Watch Now</a>
+      </div>
+    </div>
+  </div>
+  <div id="videoLoader" style="text-align: center; margin-top: -50vh; display: none;">
+  <div class="spinner"></div>
+</div>
+</div>
+
+
+
+    <!-- Tests Tab -->
+    <div id="tests" class="tab-content">
+      <h2 class="section-heading">Mock Tests & AITS</h2>
+      <p>Here you can access weekly tests, full-length mock exams, and All India Test Series (AITS).</p>
+    </div>
+
+<!-- Announcements Tab -->
+<div id="announcements" class="tab-content">
+  <h2 class="section-heading">📢 Latest Announcements</h2>
+
+  <div class="announcement-grid">
+    <div class="announcement-card important">
+      <div class="announcement-header">
+        <span class="tag">Important</span>
+        <span class="date">📅 5 July 2025</span>
+      </div>
+      <div class="announcement-body">
+        🚨 **Live Test** on Sunday at **10 AM** – Join the Zoom link before 9:50 AM. Attendance will be marked.
+      </div>
+    </div>
+
+    <div class="announcement-card general">
+      <div class="announcement-header">
+        <span class="tag">General</span>
+        <span class="date">📅 4 July 2025</span>
+      </div>
+      <div class="announcement-body">
+        📘 New handwritten notes uploaded for **Organic Chemistry** in the resource section.
+      </div>
+    </div>
+
+    <div class="announcement-card important">
+      <div class="announcement-header">
+        <span class="tag">Important</span>
+        <span class="date">📅 3 July 2025</span>
+      </div>
+      <div class="announcement-body">
+        🧪 **Weekly Test Series**: Physics and Maths tests available under the Tests tab.
+      </div>
+    </div>
+
+    <div class="announcement-card general">
+      <div class="announcement-header">
+        <span class="tag">General</span>
+        <span class="date">📅 2 July 2025</span>
+      </div>
+      <div class="announcement-body">
+        💬 **Doubt Session** with Physics mentor on **Friday 6 PM**. Submit your doubts in advance.
+      </div>
+    </div>
+
+    <div class="announcement-card general">
+      <div class="announcement-header">
+        <span class="tag">General</span>
+        <span class="date">📅 1 July 2025</span>
+      </div>
+      <div class="announcement-body">
+        🎥 All recorded lectures for June are now available. Check your class dashboard.
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+    <!-- Footer Start -->
+    <!-- <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Paikpara, Bangaon, West Bengal</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8250XXXXXX</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>secretlearner@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                    <p>Subscribe now and join our growing community of learners committed to lifelong education! </p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form action="#">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a
+                                    href="mailto:keertidvcorai@gmail.com">Subscribe</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Secret Learner</a>, All Right Reserved.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <script>
+  const tabs = document.querySelectorAll('.tab-button');
+  const contents = document.querySelectorAll('.tab-content');
+  const videoCards = document.querySelectorAll('.video-card');
+  const searchInput = document.getElementById('searchInput');
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const loader = document.getElementById('videoLoader');
+
+  // Switch tabs
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Filter tabs
+  filterTabs.forEach(filter => {
+    filter.addEventListener('click', () => {
+      const subject = filter.dataset.subject;
+      filterTabs.forEach(f => f.classList.remove('active'));
+      filter.classList.add('active');
+      filterVideos(subject, searchInput.value.toLowerCase());
+    });
+  });
+
+  // Search
+  searchInput.addEventListener('input', () => {
+    const searchText = searchInput.value.toLowerCase();
+    const activeFilter = document.querySelector('.filter-tab.active').dataset.subject;
+    filterVideos(activeFilter, searchText);
+  });
+
+  // Filtering logic
+  function filterVideos(subject, search) {
+    videoCards.forEach(card => {
+      const cardSubject = card.dataset.subject;
+      const cardTitle = card.dataset.title;
+      const matchSubject = subject === 'all' || cardSubject === subject;
+      const matchSearch = cardTitle.includes(search);
+      card.style.display = (matchSubject && matchSearch && !card.classList.contains('hidden')) ? 'flex' : 'none';
+    });
+  }
+
+  // Infinite Scroll Auto Load
+  let loading = false;
+
+  function loadMoreVideos() {
+    if (loading) return;
+    loading = true;
+    loader.style.display = 'block';
+
+    // Simulate delay
+    setTimeout(() => {
+      const hiddenCards = document.querySelectorAll('.video-card.hidden');
+      let shown = 0;
+
+      hiddenCards.forEach((card, index) => {
+        if (shown < 4) {
+          card.classList.remove('hidden');
+          card.classList.add('fade-in');
+          shown++;
+        }
+      });
+
+      loader.style.display = 'none';
+      loading = false;
+
+      // Re-apply filter and search
+      const activeFilter = document.querySelector('.filter-tab.active').dataset.subject;
+      const searchText = searchInput.value.toLowerCase();
+      filterVideos(activeFilter, searchText);
+    }, 700);
+  }
+
+  // Scroll listener
+const classesTab = document.getElementById('classes');
+
+classesTab.addEventListener('scroll', () => {
+  const bottomReached = classesTab.scrollTop + classesTab.clientHeight >= classesTab.scrollHeight - 50;
+
+  if (bottomReached && !loading) {
+    const hiddenCards = document.querySelectorAll('#classes .video-card.hidden');
+    if (hiddenCards.length > 0) {
+      loadMoreVideos();
+    }
+  }
+});
+
+  // Initial Load (show first 3)
+  window.addEventListener('DOMContentLoaded', () => {
+    let shown = 0;
+    document.querySelectorAll('.video-card.hidden').forEach((card) => {
+      if (shown < 3) {
+        card.classList.remove('hidden');
+        card.classList.add('fade-in');
+        shown++;
+      }
+    });
+  });
+</script>
+<script>
+  const playerBox = document.getElementById('videoPlayerBox');
+  const iframe = document.getElementById('videoIframe');
+  const title = document.getElementById('videoTitle');
+  const desc = document.getElementById('videoDescription');
+  const progressBar = document.getElementById('progressBar');
+  const closeBtn = document.getElementById('closePlayerBtn');
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const forwardBtn = document.getElementById('forwardBtn');
+  const backwardBtn = document.getElementById('backwardBtn');
+
+  let player;
+
+  // Load YouTube API
+  let tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.body.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = () => {
+    player = new YT.Player('videoIframe', {
+      events: {
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange
+      }
+    });
+  };
+
+  function onPlayerReady() {
+    updateProgressBar();
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+      updateProgressBar();
+    }
+  }
+
+  function updateProgressBar() {
+    if (player && player.getDuration) {
+      const duration = player.getDuration();
+      const interval = setInterval(() => {
+        if (player.getPlayerState() !== YT.PlayerState.PLAYING) {
+          clearInterval(interval);
+          return;
+        }
+        const current = player.getCurrentTime();
+        const percent = (current / duration) * 100;
+        progressBar.style.width = `${percent}%`;
+      }, 500);
+    }
+  }
+
+  // Watch Now Buttons
+  document.querySelectorAll('.watch-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const card = e.target.closest('.video-card');
+      const videoId = card.dataset.video.split("/embed/")[1];
+      const videoURL = card.dataset.video + '?autoplay=1&enablejsapi=1';
+      const videoTitle = card.dataset.title;
+      const videoDescription = card.dataset.description;
+
+      title.textContent = videoTitle;
+      desc.textContent = videoDescription;
+
+      iframe.src = videoURL;
+
+      playerBox.style.display = 'block';
+
+      // Delay fullscreen after iframe loads
+      setTimeout(() => {
+        const iframeElem = iframe;
+        if (iframeElem.requestFullscreen) {
+          iframeElem.requestFullscreen();
+        } else if (iframeElem.webkitRequestFullscreen) {
+          iframeElem.webkitRequestFullscreen();
+        } else if (iframeElem.mozRequestFullScreen) {
+          iframeElem.mozRequestFullScreen();
+        } else if (iframeElem.msRequestFullscreen) {
+          iframeElem.msRequestFullscreen();
+        }
+      }, 500);
+    });
+  });
+
+  // Custom Controls
+  playPauseBtn.addEventListener('click', () => {
+    if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+      player.pauseVideo();
+      playPauseBtn.textContent = '▶';
+    } else {
+      player.playVideo();
+      playPauseBtn.textContent = '⏸';
+    }
+  });
+
+  forwardBtn.addEventListener('click', () => {
+    player.seekTo(player.getCurrentTime() + 10, true);
+  });
+
+  backwardBtn.addEventListener('click', () => {
+    player.seekTo(player.getCurrentTime() - 10, true);
+  });
+
+  closeBtn.addEventListener('click', () => {
+    player.stopVideo();
+    iframe.src = "";
+    playerBox.style.display = 'none';
+
+    // Exit fullscreen
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  });
+</script>
+
+
+<script>
+  const videoBox = document.getElementById('videoPlayerBox');
+  const videoIframe = document.getElementById('videoIframe');
+  const videoTitle = document.getElementById('videoTitle');
+  const videoDescription = document.getElementById('videoDescription');
+
+  // Event for Watch Now buttons
+  document.querySelectorAll('.watch-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = e.target.closest('.video-card');
+      const videoURL = card.dataset.video;
+      const title = card.dataset.title;
+      const description = card.dataset.description;
+
+      videoIframe.src = `${videoURL}?autoplay=1`;
+      videoTitle.textContent = title;
+      videoDescription.textContent = description;
+      videoBox.style.display = 'block';
+
+      // Scroll to video player
+      videoBox.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+<script>
+  const videoBox2 = document.getElementById('videoPlayerBox');
+  const videoIframe2 = document.getElementById('videoIframe');
+
+  // Watch Now click (your existing code)
+  document.querySelectorAll('.watch-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = e.target.closest('.video-card');
+      const videoURL = card.dataset.video;
+      const videoTitle = card.dataset.title;
+      const videoDescription = card.dataset.description;
+
+      videoIframe2.src = `${videoURL}?autoplay=1`;
+      document.getElementById('videoTitle').textContent = videoTitle;
+      document.getElementById('videoDescription').textContent = videoDescription;
+      videoBox2.style.display = 'block';
+
+      // Go fullscreen automatically
+      setTimeout(() => {
+        const iframeElem = videoIframe2;
+        if (iframeElem.requestFullscreen) {
+          iframeElem.requestFullscreen();
+        } else if (iframeElem.webkitRequestFullscreen) {
+          iframeElem.webkitRequestFullscreen();
+        } else if (iframeElem.mozRequestFullScreen) {
+          iframeElem.mozRequestFullScreen();
+        } else if (iframeElem.msRequestFullscreen) {
+          iframeElem.msRequestFullscreen();
+        }
+      }, 300);
+    });
+  });
+
+  // Hide video player
+  function closeVideoPlayer() {
+    videoIframe2.src = '';
+    videoBox2.style.display = 'none';
+  }
+
+  // Handle ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeVideoPlayer();
+    }
+  });
+
+  // Handle fullscreen exit (cross-browser)
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
+      closeVideoPlayer();
+    }
+  });
+  document.addEventListener('webkitfullscreenchange', () => {
+    if (!document.webkitFullscreenElement) {
+      closeVideoPlayer();
+    }
+  });
+  document.addEventListener('mozfullscreenchange', () => {
+    if (!document.mozFullScreenElement) {
+      closeVideoPlayer();
+    }
+  });
+  document.addEventListener('MSFullscreenChange', () => {
+    if (!document.msFullscreenElement) {
+      closeVideoPlayer();
+    }
+  });
+</script>
+
+<script>
+  const card = document.createElement('div');
+card.classList.add('video-card');
+card.dataset.notes = 'assets/notes/myfile.pdf';
+
+const downloadBtn = document.createElement('a');
+downloadBtn.className = 'notes-btn';
+downloadBtn.href = card.dataset.notes;
+downloadBtn.target = '_blank';
+downloadBtn.download = '';
+downloadBtn.textContent = '📄 Download Notes';
+
+card.appendChild(downloadBtn);
+
+</script>
+
+  <script>
+    function toggleProfileBox() {
+      const box = document.getElementById("profileBox");
+      box.classList.toggle("active");
+    }
+
+    document.addEventListener("click", function (e) {
+      const box = document.getElementById("profileBox");
+      const btn = document.querySelector(".profile-btn");
+      if (!box.contains(e.target) && !btn.contains(e.target)) {
+        box.classList.remove("active");
+      }
+    });
+  </script>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+
+</html>

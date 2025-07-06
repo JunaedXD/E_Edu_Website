@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Learner : Login</title>
+    <title>Secret Learner : Courses</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -32,7 +32,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
 </head>
 
 <body>
@@ -49,7 +48,8 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Secret<span style="color: #54a2ff;">Learner</span></p> 
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Secret<span
+                    style="color: #54a2ff;">Learner</span></p>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             style="border: none;">
@@ -65,6 +65,7 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -77,75 +78,56 @@
     </nav>
     <!-- Navbar End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-primary py-5 mb-5 page-header">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Login</h1>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">Login</li>
-                            </ol>
-                        </nav>
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">My Courses</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">My Courses</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Categories Start -->
+    <div class="container-xxl py-5 category">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center px-3">Your Courses</h6>
+            </div>
+            <div class="row g-2 m-2">
+                <div class="col-lg-3 col-md-6  text-center">
+                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+
+                        <img src="img/cat1.png" class="img-fluid" alt="categories"></i>
+
+                        <h5 class="my-2">
+                            <a href="course1.html" class="text-center">JEE Mains + Advanced</a>
+                        </h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  text-center">
+                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+
+                        <img src="img/cat2.png" class="img-fluid" alt="categories"></i>
+
+                        <h5 class="my-2">
+                            <a href="#" class="text-center">NEET-UG</a>
+                        </h5>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Header End -->
-    
-
-
-    <!-- Login Start -->
-    <div class="container-xxl py-2 mt-4">
-        <div class="container">
-          
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.5s ">
-                <center>
-                    <form class="shadow p-4" style="max-width: 550px;">
-                        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <h1 class="mb-5 bg-white text-center px-3">Login</h1>
-            
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Email Address">
-                                    <label for="email">Email Address</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
-                                    <label for="password">Password</label>
-                                        <div class="show-pass">
-      <input type="checkbox" id="togglePassword">
-      <label for="togglePassword">Show Password</label>
     </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <p><a href="#">Forgot password?</a></p>
-                            </div>
-                            
-                            <div class="col-12">
-                                <button class="btn text-light w-100 py-3" type="submit">Login</button>
-                            </div>
-
-                            <div class="col-12 text-center">
-                                <p>Don't have an account? <a class="text-decoration-none" href="signup.html">Sign up</a></p>
-                            </div>
-                        </div>
-                    </form>
-                </center>     
-               
-
-            </div>
-        </div>
-    </div>
-    <!-- Login End -->
+    <!-- Categories End -->
 
 
     <!-- Footer Start -->
@@ -216,16 +198,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-
-      <script>
-    const togglePassword = document.getElementById("togglePassword");
-    const passwordInput = document.getElementById("password");
-
-    togglePassword.addEventListener("change", function () {
-      passwordInput.type = this.checked ? "text" : "password";
-    });
-  </script>
 </body>
 
 </html>
